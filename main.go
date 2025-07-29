@@ -81,6 +81,12 @@ func main() {
 // getCurrent gets the current weather for the provided
 // location in the units provided.
 func getCurrent(location, units, lang string) (*owm.CurrentWeatherData, error) {
+	if units == "" {
+		units = "c"
+	}
+	if lang == "" {
+		lang = "en"
+	}
 	w, err := owm.NewCurrent(units, lang, os.Getenv("OWM_API_KEY"))
 	if err != nil {
 		return nil, err
@@ -91,6 +97,12 @@ func getCurrent(location, units, lang string) (*owm.CurrentWeatherData, error) {
 }
 
 func getForecast5(location, units, lang string) (*owm.Forecast5WeatherData, error) {
+	if units == "" {
+		units = "c"
+	}
+	if lang == "" {
+		lang = "en"
+	}
 	w, err := owm.NewForecast("5", units, lang, os.Getenv("OWM_API_KEY"))
 	if err != nil {
 		return nil, err
