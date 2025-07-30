@@ -24,7 +24,7 @@ A simple MCP service that provides current weather and 5-day forecast using the 
 3. Build:
 
    ```bash
-   go build -o mcp-openweather.exe
+   go build -o mcp-weather
    ```
 
 ### Installing via Smithery
@@ -49,7 +49,7 @@ Set required environment variable:
 
     "mcpServers": {
         "mcp-openweather": {
-            "command": "/home/YOURUSER/git/mcp-openweather/mcp-openweather.exe",
+            "command": "/home/YOURUSER/git/mcp-openweather/mcp-openweather",
             "env": {
                 "OWM_API_KEY": "PUT_API_KEY_HERE"
             }
